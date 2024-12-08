@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        font-family: "Oswald", serif;
+        box-sizing: border-box;
+        background: linear-gradient(-45deg, #1e90ff, #1c1c1c);
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: rgb(26, 178, 243);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links li {
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 8px 15px;
+        border-radius: 5px;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        background-color: white;
+        border-radius: 8px;
+        font-size: 23px;
+    }
+
+    .contact {
+        padding: 50px;
+        background: linear-gradient(-45deg, #1e90ff, #1c1c1c);
+        text-align: center;
+    }
+
+    .contact .heading {
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .contact .heading span {
+        color: rgb(26, 178, 243);
+
+    }
+
+    /* Form Styling */
+    form {
+        max-width: 700px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Input Fields Styling */
+    .input-box {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .input-box input {
+        width: 48%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 1rem;
+    }
+
+    /* Textarea Styling */
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-bottom: 15px;
+        resize: none;
+    }
+
+    .btn {
+        margin-top: 20px;
+        background-color: rgb(11, 13, 15);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: rgb(10, 11, 29);
+        transform: scale(1.1);
+        box-shadow: 0px 4px 15px rgb(28, 176, 239);
+
+    }
+
+    #successMessage {
+        display: none;
+        margin-top: 20px;
+        color: #28a745;
+        font-weight: bold;
+    }
+
+    .navbar-logo {
+        display: flex;
+    }
+
+    .logo {
+        margin-top: 15px;
+        margin-right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar-logo h1 {
+        font-size: 30px;
+        color: yellow;
+    }
+
+    footer {
+        background-color: rgb(26, 26, 26);
+        color: white;
+        text-align: center;
+        padding: 20px 10px;
+        margin-top: 35px;
+        height: 45px;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    footer a {
+        color: rgb(0, 122, 255);
+        text-decoration: none;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+        color: rgb(26, 178, 243);
+    }
+
+    footer p {
+        margin: 5px 0;
+
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .navbar-logo h1 {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+        }
+
+        .nav-links a {
+            font-size: 18px;
+            padding: 8px;
+        }
+
+        form {
+            padding: 15px;
+        }
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+
+    @media (max-width: 480px) {
+        .navbar-logo h1 {
+            font-size: 24px;
+        }
+
+        .logo {
+            width: 45px;
+            height: 45px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        .contact .heading {
+            font-size: 1.8rem;
+        }
+
+        .input-box input {
+            flex: 1 1 100%;
+        }
+    }
+
+
+    .menu-icon {
+        display: none;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        margin-right: 280px;
+    }
+
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+        transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+        .menu-icon {
+            display: block;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: rgb(26, 178, 243);
+            position: absolute;
+            top: 70px;
+            right: 0;
+            width: 100%;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .nav-links.show {
+            display: flex;
+        }
+
+        .nav-links a {
+            text-align: center;
+            font-size: 15px;
+            padding: 10px 0;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="logo.png" alt="Logo" class="logo">
+                <h1>Tic-Tac-Toe</h1>
+            </div>
+            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form action="#" onsubmit="return handleSubmit(event)">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number" required>
+                <input type="text" placeholder="Subject" required>
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Tic-Tac-Toe. All Rights Reserved.</p>
+        <p>
+            <a href="contact.html">Contact Me</a>
+        </p>
+    </footer>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert("Message sent successfully!");
+            return false;
+        }
+
+        // JavaScript to toggle the menu visibility
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+
+</body>
+
+</html>

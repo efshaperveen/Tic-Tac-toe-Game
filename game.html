@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(-45deg, #1e90ff, #1c1c1c);
+    }
+
+    h1 {
+        color: white;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .game-board {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 5px;
+        margin: 20px auto;
+    }
+
+    .cell {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(28, 176, 239);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+    }
+
+    #restartBtn {
+        margin-top: 20px;
+        background-color: rgb(28, 176, 239);
+        color: white;
+        border: none;
+        padding: 14px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #restartBtn:hover {
+        background-color: rgb(10, 11, 29);
+        transform: scale(1.1);
+        box-shadow: 0px 4px 15px rgb(243, 243, 247);
+    }
+
+
+    #statusText {
+        margin-top: 15px;
+        font-size: 1.7em;
+        font-weight: bold;
+        border-radius: 8px;
+        padding: 10px;
+        color: black;
+        background-color: yellow;
+        animation: flash 1s infinite;
+    }
+
+    @keyframes flash {
+
+        0%,
+        100% {
+            background-color: yellow;
+        }
+
+        50% {
+            background-color: orange;
+        }
+    }
+
+    /* Responsive Design */
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2em;
+        }
+
+        .cell {
+            font-size: 2.5em;
+        }
+
+        #restartBtn {
+            padding: 10px 16px;
+            font-size: 0.9em;
+        }
+
+        #statusText {
+            font-size: 1em;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.5em;
+        }
+
+        .cell {
+            font-size: 2em;
+        }
+
+        #restartBtn {
+            padding: 8px 14px;
+            font-size: 0.8em;
+        }
+
+        #statusText {
+            font-size: 0.9em;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <div class="game-board">
+            <div class="cell" id="cell-0"></div>
+            <div class="cell" id="cell-1"></div>
+            <div class="cell" id="cell-2"></div>
+            <div class="cell" id="cell-3"></div>
+            <div class="cell" id="cell-4"></div>
+            <div class="cell" id="cell-5"></div>
+            <div class="cell" id="cell-6"></div>
+            <div class="cell" id="cell-7"></div>
+            <div class="cell" id="cell-8"></div>
+        </div>
+        <p id="statusText"></p>
+        <button id="restartBtn">Restart Game</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
